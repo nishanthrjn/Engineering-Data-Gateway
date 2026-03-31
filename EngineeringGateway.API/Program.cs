@@ -2,18 +2,18 @@ using EngineeringGateway.API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// --- 1. Register Services (Dependency Injection) ---
-builder.Services.AddControllers(); // CRITICAL: This tells .NET to look for your PartsController
+// Add services to the container.
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Register your custom services
+// Dependency Injection registrations
 builder.Services.AddScoped<ILegacyDataService, LegacyDataService>();
-builder.Services.AddScoped<IValidationEngine, SiemensStandardValidationEngine>();
+builder.Services.AddScoped<IValidationEngine, IndustrialSafetyValidationEngine>();
 
 var app = builder.Build();
 
-// --- 2. Configure Middleware ---
+// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -21,8 +21,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-// CRITICAL: This maps the attribute routes like [Route("api/[controller]")]
-app.MapControllers(); 
+app.MapControllers();
 
 app.Run();
