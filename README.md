@@ -74,6 +74,25 @@ All unit tests for the Industrial Safety Engine will execute and report results.
 
 ---
 
+## 📸 Screenshots
+
+### Swagger UI — API Overview
+![Swagger UI showing EngineeringGateway.API v1 with all three endpoints](./screenshots/API%20Overview.png)
+
+### Swagger UI — Executing a Request
+![GET / endpoint expanded with Parameters panel and Execute button](./screenshots/Executing%20a%20Request.png)
+
+### Live Response — `GET /`
+![200 response for GET / with curl command and raw response body](./screenshots/GET.png)
+
+### Live Response — `GET /api/Parts`
+![200 response showing two EngineeringPart records: ENG-UNIT-A101 (Titanium Alloy, 15.4 kg, compliant) and ENG-UNIT-B992 (Stainless Steel, 82.1 kg, non-compliant)](./screenshots/GET%20apiParts.png)
+
+### Live Response — `GET /api/Parts/compliance-report`
+![Compliance report: ENG-UNIT-A101 Approved, ENG-UNIT-B992 Rejected with reason "High-mass component exceeds the 30-day safety inspection window."](./screenshots/GET%20apiPartscompliance-report.png)
+
+---
+
 ## 📊 Industrial Safety Engine
 
 The gateway doesn't just pass data — it **protects** it. Before any component clears the gateway, it must satisfy the following safety rules:
@@ -102,7 +121,7 @@ The test suite in `EngineeringGateway.Tests` is designed to validate every edge 
 
 ## 👨‍💻 Developed By
 
-** Nishanth Rajan **  
+**Nishanth Rajan**  
 Focusing on robust, scalable, and type-safe industrial software solutions.
 
 > *Built for environments where correctness is not optional.*
