@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="EngineeringGateway.API/EngineeringGateway.API.csproj" />
+  <Project Path="EngineeringGateway.Tests/EngineeringGateway.Tests.csproj" />
 </Solution>
