@@ -1,5 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 
+// Register our service so the Controllers can use it
+builder.Services.AddScoped<EngineeringGateway.API.Services.ILegacyDataService, EngineeringGateway.API.Services.LegacyDataService>();
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
