@@ -6,15 +6,14 @@ public class LegacyDataService : ILegacyDataService
 {
     public async Task<IEnumerable<EngineeringPart>> GetLegacyPartsAsync()
     {
-        // We simulate a 500ms delay to mimic a slow legacy database
-        await Task.Delay(500);
+        await Task.Delay(500); // Simulate database latency
 
         return new List<EngineeringPart>
         {
             new EngineeringPart 
             { 
                 Id = Guid.NewGuid(), 
-                PartNumber = "SIE-TRB-001", 
+                PartNumber = "ENG-UNIT-A101", 
                 Description = "Turbine Blade Section A", 
                 Material = "Titanium Alloy", 
                 IsCompliant = true, 
@@ -24,12 +23,12 @@ public class LegacyDataService : ILegacyDataService
             new EngineeringPart 
             { 
                 Id = Guid.NewGuid(), 
-                PartNumber = "SIE-VLV-992", 
+                PartNumber = "ENG-UNIT-B992", 
                 Description = "High-Pressure Valve Housing", 
                 Material = "Stainless Steel", 
                 IsCompliant = false, 
                 WeightKg = 82.1, 
-                LastInspected = DateTime.Now.AddMonths(-1) 
+                LastInspected = DateTime.Now.AddMonths(-2) 
             }
         };
     }
